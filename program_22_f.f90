@@ -2,6 +2,7 @@ program sum_of_series_02
 implicit none
 integer::si,i,n
 real::sum,x
+real,parameter ::pi=3.1414
 integer,allocatable,dimension(:)::a
 do
 print*,"Enter the serial no:\=0"
@@ -13,6 +14,7 @@ allocate(a(n))
 if(n==0) then
 print*,"Sum=0"
 else
+x=(pi*x)/180
 sum=x
 a(0)=1
 do i=1,n-1
