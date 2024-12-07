@@ -1,7 +1,7 @@
 program sum_of_series_05
 implicit none
-integer::si,i,n,fact
-real::sum,x
+integer::si,i,n
+real::sum,x,fact
 do
 print*,"Enter the serial no:/=0"
 read*,si
@@ -12,10 +12,10 @@ if(n==0) then
 Print*,"Sum=0"
 else
 sum=1.0
-fact=1
+fact=1.0
 do i=1,n-1
-fact=fact*i
-sum=sum+x**i/fact
+fact=fact*(i+1)
+sum=sum+x**(i+1)/fact
 end do
 print*,"Sum of series:",sum
 end if
