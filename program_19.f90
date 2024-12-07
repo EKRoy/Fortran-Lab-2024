@@ -1,7 +1,7 @@
 program sum_of_exp_03
 implicit none
-integer::i,si,n,fact
-real::sum,x
+integer::i,si,n
+real::sum,x,fact
 do 
 print*,"Enter the value of serial no:/=0"
 read*,si
@@ -12,7 +12,7 @@ sum=0.0
 fact=1.0
 do i=1,n
 fact=fact*i
-sum=sum+((x**i)/real(fact))
+sum=sum+(x**i)/fact
 end do
 print*,"summation:",sum
 end do
