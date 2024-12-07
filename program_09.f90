@@ -13,7 +13,7 @@ print*,"Enter the values of array:arr(i)"
 read*,(arr(i),i=1,n)
  do i = 1, n-1
     do j = i+1, n
-      if (arr(i) > arr(i+1)) then
+      if (arr(i) > arr(j)) then
         temp = arr(i)
         arr(i) = arr(j)
         arr(j) = temp
