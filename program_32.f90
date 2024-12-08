@@ -2,25 +2,31 @@ program straight_line_03
 implicit none
 integer::i,si,n
 real::m,c
-real,dimension(100)::x,y
+real,dimension(:),allocatable::x,y
 do
 print*,"Enter the serial no:/=0"
 read*,si
 if(si==0) exit
 print*,"Enter the value of n points"
 read*,n
+allocate(x(n))
+allocate(y(n))
 print*,"Enter the set of points xi,yi"
 read*,(x(i),y(i),i=1,n)
 call st_line(x,y,n,m,c)
 print*,"Equation of straight line:","y=",m,"x+",c
+deallocate(x)
+deallocate(y)
 end do
 end program straight_line_03 
 
 subroutine st_line(arr_x,arr_y,n,m,c)
 implicit none
-integer::i,n
-real::arr_x(n),arr_y(n)
-real::sumx,sumy,sumxy,sqrtx,upper,lower,m,c
+integer,intent(in)::n
+integer::i
+real,intent(in)::arr_x(n),arr_y(n)
+real::sumx,sumy,sumxy,sqrtx,upper,lower
+real,intent(out)::m,c
 sumx=0.0
 sumy=0.0
 sumxy=0.0
