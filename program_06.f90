@@ -17,7 +17,7 @@ if(u/=0) then
 v=(c*u**(-1)-u*cos(x))/b
 print*,"the value of v=",v
 else 
-print*,"the value of u is undefined"
+print*,"the value of v is undefined"
 end if
 end if
 end do
