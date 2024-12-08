@@ -1,4 +1,4 @@
- program quadratic_equation_Subroutine_Subprogram
+program quadratic_equation_Subroutine_Subprogram
 implicit none 
 integer::si,ok1,ok2
 real::a,b,c,d,r,x1,x2,im1,im2
@@ -24,8 +24,10 @@ end program quadratic_equation_Subroutine_Subprogram
 
 subroutine quadratic(a,b,c,d,x1,x2,im1,im2,r,ok1,ok2)
 implicit none
-integer::ok1,ok2
-real::a,b,c,d,x1,x2,im1,im2,e,r
+integer,intent(out)::ok1,ok2
+real,intent(in)::a,b,c,d
+real,intent(out)::x1,x2,im1,im2
+real::e,r
 if((a+b)==0) then
 print*,"This is not quadratic equation."
 else
