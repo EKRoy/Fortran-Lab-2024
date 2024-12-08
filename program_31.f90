@@ -1,7 +1,8 @@
 real function mm(arr_x,arr_y,n)
 implicit none
-integer::i,n
-real::arr_x(n),arr_y(n)
+integer::i
+integer,intent(in)::n
+real,intent(in)::arr_x(n),arr_y(n)
 real::sumx,sumy,sumxy,sqrtx,upper,lower,m
 sumx=0.0
 sumy=0.0
@@ -21,9 +22,11 @@ end function mm
 
 real function cc(arr_x,arr_y,n,m)
 implicit none
-integer::i,n
-real::arr_x(n),arr_y(n)
-real::sumx,sumy,c,m
+integer::i
+integer,intent(in)::n
+real,intent(in)::arr_x(n),arr_y(n)
+real,intent(in)::m
+real::sumx,sumy,c
 sumx=0.0
 sumy=0.0
 do i=1,n
