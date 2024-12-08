@@ -1,21 +1,23 @@
 program sum_of_digit
 implicit none
-integer::si,sum,n,digit
+integer::si,sum,n,digit,reverse
 do
 print*,"Enter the serial no:/=0"
 read*,si
 if(si==0) exit
 sum=0
+reverse=0
 print*,"Enter the value of number(n)"
 read*,n
 print*,"Reverse of the number:"
   do
   if(n==0) exit
   digit=mod(n,10)
-  print*,digit
+  reverse=reverse*10+digit
   sum=sum+digit
   n=n/10
   end do
   print*,"Summation:",sum
+  print*,"Reverse:",reverse
   end do
   end program sum_of_digit
