@@ -18,8 +18,10 @@ end program experiment_40
 
 subroutine area(arr,n,sm1,am1,gm1,sd1)
 implicit none
-integer::i,n,arr(n)
-real::sm1,am1,gm1,sd1,dv,prod,sum,var
+integer::i
+integer,intent(in)::n,arr(n)
+real,intent(out)::sm1,am1,gm1,sd1
+real::dv,prod,sum,var
 sum=0.0
 do i=1,n
 sum=sum+arr(i)
