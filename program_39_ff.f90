@@ -1,6 +1,7 @@
 real function sm(arr,n)
 implicit none
-integer::i,n,arr(n)
+integer::i
+integer,intent(in)::n,arr(n)
 real::sum
 sum=0.0
 do i=1,n
@@ -11,7 +12,8 @@ end function sm
 
 real function gm(arr,n)
 implicit none
-integer::i,n,arr(n)
+integer::i
+integer,intent(in)::n,arr(n)
 real::product,gm1
 product=1.0
 do i=1,n
@@ -23,7 +25,8 @@ end function gm
 
 real function am(arr,n)
 implicit none
-integer::i,n,arr(n)
+integer::i
+integer,intent(in)::n,arr(n)
 real::sum,arithm
 sum=0.0
 do i=1,n 
@@ -35,7 +38,8 @@ end function am
 
 real function sd(arr,n)
 implicit none
-integer::i,n,arr(n)
+integer::i
+integer,intent(in)::n,arr(n)
 real::dv,sum,amm,val
 sum=0.0
 do i=1,n
