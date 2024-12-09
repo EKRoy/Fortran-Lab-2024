@@ -15,9 +15,8 @@ do i=1,n
 if((a+(i-1)*b)==0) then
 flag=.false.
 exit
-else
-sum=sum+i/(a+(i-1)*b)
 end if
+sum=sum+i/(a+(i-1)*b)
 end do
 if(flag) then
 print*,"Summation=",sum
