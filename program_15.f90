@@ -3,15 +3,19 @@ implicit none
 integer::si,i,n
 real::prod,a,b
 do
-print*,"Enter the serial no:/=0"
+prInt*,"Enter the serial no:/=0"
 read*,si
 if(si==0) exit
 print*,"Enter the value of n,a,b"
 read*,n,a,b
+if((a+n*b)==0) then
+print*,"This is Undefined"
+else
 prod=1.0
 do i=1,n
 prod=prod*(i/(a+i*b))
 end do
 print*,"Product=",prod
+end if
 end do
 end program product_of_expression_02
