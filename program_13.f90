@@ -9,7 +9,6 @@ sum=0
 reverse=0
 print*,"Enter the value of number(n)"
 read*,n
-print*,"Reverse of the number:"
   do
   if(n==0) exit
   digit=mod(n,10)
