@@ -1,21 +1,28 @@
 program product_of_expression_02
 implicit none
-integer::si,i,n
+integer::i,n,si
 real::prod,a,b
+logical::flag
 do
-prInt*,"Enter the serial no:/=0"
+print*,"Enter the serial no:/=0"
 read*,si
 if(si==0) exit
 print*,"Enter the value of n,a,b"
 read*,n,a,b
-if((a+n*b)==0) then
-print*,"This is Undefined"
-else
+flag=.true.
 prod=1.0
 do i=1,n
+if((a+i*b)==0) then
+flag=.false.
+exit
+else
 prod=prod*(i/(a+i*b))
+end if
 end do
+if(flag) then
 print*,"Product=",prod
+else
+print*,"This is undefined."
 end if
 end do
 end program product_of_expression_02
