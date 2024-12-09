@@ -1,7 +1,7 @@
 program matrix_Sum_Subtraction_Multiplication
 implicit none
 integer::Arow,Brow,Acol,Bcol,i,j,k,si
-integer,allocatable,dimension(:,:)::A,B,C,D,E
+real,allocatable,dimension(:,:)::A,B,C,D,E
 do
 print*,"Enter the serial no:/=0"
 read*,si
