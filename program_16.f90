@@ -15,9 +15,8 @@ do i=1,n
 if((r+(i-1)*a)==0) then
 flag=.false.
 exit
-else
-prod=prod*(i*b)/(r+(i-1)*a)**i
 end if
+prod=prod*(i*b)/(r+(i-1)*a)**i
 end do
 if(flag) then
 print*,"Product=",prod
