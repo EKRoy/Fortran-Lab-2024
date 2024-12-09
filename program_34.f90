@@ -1,7 +1,7 @@
 program matrix_sub
 implicit none
 integer::Arow,Brow,Acol,Bcol,i,j,si
-integer,allocatable,dimension(:,:)::A,B,C
+real,allocatable,dimension(:,:)::A,B,C
 do
 print*,"Enter the serial no:/=0"
 read*,si
