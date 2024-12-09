@@ -14,8 +14,8 @@ else
 sum=1.0
 fact=1.0
 do i=1,n-1
-fact=fact*(i+1)
-sum=sum+x**(i+1)/fact
+fact=fact*i
+sum=sum+x**i/fact
 end do
 print*,"Sum of series:",sum
 end if
