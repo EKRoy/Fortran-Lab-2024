@@ -15,9 +15,8 @@ do i=1,n
 if(r+(i-1)*a==0) then
 flag=.false.
 exit
-else
-sum=sum+(i*b/(r+(i-1)*a)**i)
 end if
+sum=sum+(i*b/(r+(i-1)*a)**i)
 end do
 if(flag) then
 print*,"Sum of expression:",sum
