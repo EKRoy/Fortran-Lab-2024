@@ -30,7 +30,7 @@ im2=im1
 r=-c/(2*(a+b))
 print*,"the equation has complex roots"
 print*,"x1=",r,"+i",im1
-print*,"x2=",r,"+i",im2
+print*,"x2=",r,"-i",im2
 end if 
 end if
 end do
