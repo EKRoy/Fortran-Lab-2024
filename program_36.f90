@@ -11,7 +11,7 @@ read*,Arow,Acol
 print*,"Enter B matrix size:(Brow,Bcol)"
 read*,Brow,Bcol
 
-allocate(A(Arow,Acol),B(Brow,Bcol),C(Arow,Acol),D(Arow,Acol),E(Acol,Brow))
+allocate(A(Arow,Acol),B(Brow,Bcol),C(Arow,Acol),D(Arow,Acol),E(Arow,Bcol))
 
 print*,"Enter the value of A row-wise:"
 read*,((A(i,j),j=1,Acol),i=1,Arow)
