@@ -13,7 +13,7 @@ if(n/=m) then
 print*,"Does not calculate determinant for this matrix"
 else
 allocate(A(n,m))
-print*,"Enter the matrix elements Row-Rise"
+print*,"Enter the matrix elements Row-wise"
 read*,((A(i,j),j=1,m),i=1,n)
 if(n==1) then
 print*,"Determinant=",A(1,1)
@@ -31,4 +31,4 @@ end if
 end if 
 deallocate(A)
 end do
-end program
+end program	matrix_det
