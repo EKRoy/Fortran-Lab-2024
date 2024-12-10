@@ -1,3 +1,24 @@
+program experiment_39
+implicit none
+integer::n,i
+real::am,gm,sm,sd,am1,gm1,sm1,sd1
+integer,allocatable,dimension(:)::array
+print*,"Enter the value of array size:"
+read*,n
+allocate(array(n))
+print*,"Enter the elements:"
+read*,(array(i),i=1,n)
+sm1=sm(array,n)
+gm1=gm(array,n)
+am1=am(array,n)
+sd1=sd(array,n)
+print*,"sum=",sm1
+print*,"GM=",gm1
+print*,"AM=",am1
+print*,"SD=",sd1
+deallocate(array)
+end program experiment_39 
+
 real function sm(arr,n)
 implicit none
 integer::i
@@ -54,23 +75,4 @@ val=dv/real(n)
 sd=sqrt(val)
 end function sd
 
-program experiment_39
-implicit none
-integer::n,i
-real::am,gm,sm,sd,am1,gm1,sm1,sd1
-integer,allocatable,dimension(:)::array
-print*,"Enter the value of array size:"
-read*,n
-allocate(array(n))
-print*,"Enter the elements:"
-read*,(array(i),i=1,n)
-sm1=sm(array,n)
-gm1=gm(array,n)
-am1=am(array,n)
-sd1=sd(array,n)
-print*,"sum=",sm1
-print*,"GM=",gm1
-print*,"AM=",am1
-print*,"SD=",sd1
-deallocate(array)
-end program experiment_39
+
