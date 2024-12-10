@@ -1,12 +1,12 @@
-program matrix_sum
+program matrix_inverse
     implicit none
-    integer::n, i, j, m
+    integer::i, j, n, m
     real(8)::detA
-    real(8), allocatable, dimension(:,:)::A, inv, adj
+    real(8), allocatable, dimension(:,:)::A, inv, adj_trans
 
     print *, "Enter the number of rows (n) and columns (m):"
     read *, n, m
-    allocate(A(n,m), inv(n,m), adj(n,m))
+    allocate(A(n,m), inv(n,m), adj_trans(n,m))
 
     print *, "Enter the values of matrix A row-wise:"
     read *, ((A(i,j), j=1,m), i=1,n)
@@ -17,7 +17,7 @@ program matrix_sum
     end do
 
     if (n /= m) then
-        print *, "The matrix is not square. Cannot find the inverse."
+        print *, "The matrix is not square.Cannot find the inverse."
         stop
     end if
 
@@ -34,12 +34,12 @@ program matrix_sum
             print *, "Matrix is singular and cannot be inverted."
         else
       		!adj and transpose
-            adj(1,1) = A(2,2)
-            adj(2,1) = -A(2,1)
-            adj(1,2) = -A(1,2)
-            adj(2,2) = A(1,1)
+            adj_trans(1,1) = A(2,2)
+            adj_trans(2,1) = -A(2,1)
+            adj_trans(1,2) = -A(1,2)
+            adj_trans(2,2) = A(1,1)
 
-            inv = adj / detA
+            inv = adj_trans / detA
             print *, "The inverse matrix is:"
             do i = 1, n
                 print *, (inv(i,j), j=1, m)
@@ -53,18 +53,18 @@ program matrix_sum
         if (detA == 0.0) then
             print *, "Matrix is singular and cannot be inverted."
         else
-            adj(1,1) = A(2,2) * A(3,3) - A(2,3) * A(3,2)
-            adj(2,1) = -(A(2,1) * A(3,3) - A(2,3) * A(3,1))
-            adj(3,1) = A(2,1) * A(3,2) - A(2,2) * A(3,1)
-            adj(1,2) = -(A(1,2) * A(3,3) - A(1,3) * A(3,2))
-            adj(2,2) = A(1,1) * A(3,3) - A(1,3) * A(3,1)
-            adj(3,2) = -(A(1,1) * A(3,2) - A(1,2) * A(3,1))
-            adj(1,3) = A(1,2) * A(2,3) - A(1,3) * A(2,2)
-            adj(2,3) = -(A(1,1) * A(2,3) - A(1,3) * A(2,1))
-            adj(3,3) = A(1,1) * A(2,2) - A(1,2) * A(2,1)
+            adj_trans(1,1) = A(2,2) * A(3,3) - A(2,3) * A(3,2)
+            adj_trans(2,1) = -(A(2,1) * A(3,3) - A(2,3) * A(3,1))
+            adj_trans(3,1) = A(2,1) * A(3,2) - A(2,2) * A(3,1)
+            adj_trans(1,2) = -(A(1,2) * A(3,3) - A(1,3) * A(3,2))
+            adj_trans(2,2) = A(1,1) * A(3,3) - A(1,3) * A(3,1)
+            adj_trans(3,2) = -(A(1,1) * A(3,2) - A(1,2) * A(3,1))
+            adj_trans(1,3) = A(1,2) * A(2,3) - A(1,3) * A(2,2)
+            adj_trans(2,3) = -(A(1,1) * A(2,3) - A(1,3) * A(2,1))
+            adj_trans(3,3) = A(1,1) * A(2,2) - A(1,2) * A(2,1)
 
 
-            inv = adj / detA
+            inv = adj_trans / detA
 
             print *, "The inverse matrix is:"
             do i = 1, n
@@ -72,4 +72,4 @@ program matrix_sum
             end do
         end if
     end if
-end program matrix_sum
+end program matrix_inverse
