@@ -2,44 +2,44 @@ program experiment_40
 implicit none
 integer::i,n
 real::sm,am,gm,sd
-integer,allocatable,dimension(:)::array
+real,allocatable,dimension(:)::A
 print*,"Enter the size of elements:"
 read*,n
-allocate(array(n))
+allocate(A(n))
 print*,"Enter the elements:"
-read*,(array(i),i=1,n)
-call area(array,n,sm,am,gm,sd)
+read*,(A(i),i=1,n)
+call area(A,n,sm,am,gm,sd)
 print*,"Sum=",sm
 print*,"AM=",am
 print*,"GM=",gm
 print*,"SD=",sd
-deallocate(array)
+deallocate(A)
 end program experiment_40
 
-subroutine area(arr,n,sm1,am1,gm1,sd1)
+subroutine area(A,n,sm,am,gm,sd)
 implicit none
 integer::i
-integer,intent(in)::n,arr(n)
-real,intent(out)::sm1,am1,gm1,sd1
-real::dv,prod,sum,var
+integer,intent(in)::n,A(n)
+real,intent(out)::sm,am,gm,sd
+real::dv,prod,sum
 sum=0.0
 do i=1,n
-sum=sum+arr(i)
+sum=sum+A(i)
 end do
-sm1=sum
-am1=sum/real(n)
+sm=sum
+am=sum/real(n)
 
 prod=1.0
 do i=1,n
-prod=prod*arr(i)
+prod=prod*A(i)
 end do
-gm1=prod**(1/real(n))
+gm=prod**(1/real(n))
 
 dv=0.0
 do i=1,n
-dv=dv+(arr(i)-am1)**2.0
+dv=dv+(A(i)-am)**2.0
 end do
-var=dv/real(n)
-sd1=sqrt(var)
+dv=dv/real(n)
+sd=sqrt(dv)
 end subroutine area
 
