@@ -9,10 +9,10 @@ read*,si
 if(si==0) exit
 print*,"Enter the row(n) and column(m):"
 read*,n,m
+allocate(A(n,m))
 if(n/=m) then
 print*,"Does not calculate determinant for this matrix"
 else
-allocate(A(n,m))
 print*,"Enter the matrix elements Row-wise"
 read*,((A(i,j),j=1,m),i=1,n)
 if(n==1) then
