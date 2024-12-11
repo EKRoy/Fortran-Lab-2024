@@ -20,22 +20,22 @@ deallocate(y)
 end do
 end program straight_line_03 
 
-subroutine st_line(arr_x,arr_y,n,m,c)
+subroutine st_line(x,y,n,m,c)
 implicit none
 integer,intent(in)::n
 integer::i
-real,intent(in)::arr_x(n),arr_y(n)
-real::sumx,sumy,sumxy,sqrtx,upper,lower
+real,intent(in)::x(n),y(n)
 real,intent(out)::m,c
+real::sumx,sumy,sumxy,sqrtx,upper,lower
 sumx=0.0
 sumy=0.0
 sumxy=0.0
 sqrtx=0.0
 do i=1,n
-sumx=sumx+arr_x(i)
-sumy=sumy+arr_y(i)
-sumxy=sumxy+arr_x(i)*arr_y(i)
-sqrtx=sqrtx+arr_x(i)*arr_x(i)
+sumx=sumx+x(i)
+sumy=sumy+y(i)
+sumxy=sumxy+x(i)*y(i)
+sqrtx=sqrtx+x(i)*x(i)
 end do
 upper=n*sumxy-sumx*sumy
 lower=n*sqrtx-sumx*sumx
