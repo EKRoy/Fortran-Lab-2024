@@ -19,7 +19,8 @@ end program experiment_40
 subroutine area(A,n,sm,am,gm,sd)
 implicit none
 integer::i
-integer,intent(in)::n,A(n)
+integer,intent(in)::n
+real,intent(in)::A(n)
 real,intent(out)::sm,am,gm,sd
 real::dv,prod,sum
 sum=0.0
