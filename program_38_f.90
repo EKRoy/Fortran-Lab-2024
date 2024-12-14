@@ -1,0 +1,22 @@
+program inverse_matrix
+implicit none
+integer::i,j,n
+real,dimension(:,:),allocatable::A,trans,inverse
+print*,"Enter the value of n(1 or 2 or 3 only)"
+read*,n
+allocate(A(n,n))
+allocate(trans(n,n))
+allocate(inverse(n,n))
+print*,"Enter the value of matrix row rise:"
+do i=1,n
+ do j=1,n
+	read*,A(i,j)
+ end do
+end do
+
+do i=1,n
+ do j=1,n
+	read*,A(i,j)
+ end do
+end do
+end program
