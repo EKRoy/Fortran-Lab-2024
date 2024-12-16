@@ -11,7 +11,7 @@ read*,a,b,c,d
 if((a+b)==0) then
 print*,"This is not quadratic equation."
 else
-e=c*2-4(a+b)*d
+e=c**2-4*(a+b)*d
 if(e>0) then
  code=1
 else if(e==0) then
